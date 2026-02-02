@@ -1,25 +1,29 @@
 body {
 	margin: 20px;
-	width:100vw;
+	width: 100vw;
 	display: flex;
 	justify-content: center;
 }
-
 .index {
 	position: fixed;
 	top: 0;
 	left: 0;
 	margin: 10px;
 	padding: 10px;
-	list-style: non;
+	list-style: none;
 	list-style-type: none;
 	/* filter: grayscale(100%); */
+}
+
+/* Hide the toggle by default on desktop */
+#index-toggle,
+.index-toggle-label {
+	display: none;
 }
 
 a:hover {
 	
 }
-
 .blog-post.contact {
 	font-family: "prestige-elite-std", monospace;
 	font-weight: 700;
@@ -33,14 +37,12 @@ a:hover {
 	top: 50%;
     transform: translateY(-50%); */
 }
-
 .blog-post.contact img {
 	max-width: 80px;
 	margin-bottom: 10px;
 	border: none;
 	float: right;
 }
-
 .date {
 	font-family: "prestige-elite-std", monospace;
 	font-weight: 400;
@@ -48,13 +50,11 @@ a:hover {
 	font-size: 14px;
 	color: gray;
 }
-
 .title {
 	font-weight: bold;
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
-
 .blog-container {
 	width: 100%;
 	display: flex;
@@ -63,7 +63,6 @@ a:hover {
 	/* background-color: pink; */
 	gap: 20px;
 }
-
 .blog-post {
 	width: 700px;
 	font-family: "prestige-elite-std", monospace;
@@ -72,7 +71,6 @@ a:hover {
 	font-size: 14px;
 	margin-bottom: 40px;
 }
-
 .blog-post.writing {
 	font-family: 'Times New Roman', Times, serif;
 	font-weight: normal;
@@ -81,22 +79,17 @@ a:hover {
 	border: solid 1px black;
 	padding: 20px;
 }
-
 .blog-post img {
 	width: 100%;
 	margin-bottom: 10px;
 	border: solid 1px black;
 }
-
-
-
 textarea {
 	width: 100%;
 	font-size: 16px;
 	overflow: hidden; /* hide scrollbars */
 	resize: none;     /* prevent manual resize */
 	padding: 8px;
-
 }
 .blog-header{
 	display: flex;
@@ -107,11 +100,25 @@ textarea {
 @media (max-width: 768px) {
 	body {
 		margin: 10px 0 0 0;
+		width: 100%;
 	}
 	
+.index {
+	background-color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+	left: 0;
+	right: 0;
+	border-bottom: solid 1px black;
+}
+
 	.blog-container {
 		width: calc(100% - 20px);
 		margin: 0 10px;
+		margin-top: 60px;
 	}
 	
 	.blog-post {
@@ -122,5 +129,26 @@ textarea {
 	.blog-post.contact {
 		box-sizing: border-box;
 		max-width: 100%;
+	}
+	
+	/* Show the toggle on mobile */
+	#index-toggle {
+		display: inline-block;
+	}
+	
+	.index-toggle-label {
+		display: inline-block;
+		margin-bottom: 10px;
+		cursor: pointer;
+	}
+	
+	/* Hide index content by default on mobile (when unchecked) */
+	.index-content {
+		display: none;
+	}
+	
+	/* Show index content when checkbox is checked */
+	#index-toggle:checked ~ .index-content {
+		display: block;
 	}
 }
