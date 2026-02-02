@@ -103,3 +103,24 @@ textarea {
 	flex-wrap: wrap-reverse;
 	justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+	body {
+		margin: 10px 0 0 0;
+	}
+	
+	.blog-container {
+		width: calc(100% - 20px);
+		margin: 0 10px;
+	}
+	
+	.blog-post {
+		width: 100%;
+	}
+	
+	.blog-post.writing,
+	.blog-post.contact {
+		box-sizing: border-box;
+		max-width: 100%;
+	}
+}
